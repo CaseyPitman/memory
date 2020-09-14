@@ -8,25 +8,29 @@ function App() {
   return (
     <div className="App">
       <table className = 'board'>
-        <th className = 'title' colSpan = '4'>Memory</th>
-        <tr>
-          <td className = 'card'></td>
-          <td className = 'card'></td>
-          <td className = 'card'></td>
-          <td className = 'card'></td>
-        </tr>
-        <tr>
-          <td className = 'card'></td>
-          <td className = 'card'></td>
-          <td className = 'card'></td>
-          <td className = 'card'></td>
-        </tr>
-        <tr>
-          <td className = 'card'></td>
-          <td className = 'card'></td>
-          <td className = 'card'></td>
-          <td className = 'card'></td>
-        </tr>
+        <tbody>
+          <tr>
+            <th className = 'title' colSpan = '4'>Memory</th>
+          </tr>
+          <tr>
+            <td className = 'card face-down'></td>
+            <td className = 'card'></td>
+            <td className = 'card'></td>
+            <td className = 'card'></td>
+          </tr>
+          <tr>
+            <td className = 'card'></td>
+            <td className = 'card'></td>
+            <td className = 'card'></td>
+            <td className = 'card'></td>
+          </tr>
+          <tr>
+            <td className = 'card'></td>
+            <td className = 'card'></td>
+            <td className = 'card'></td>
+            <td className = 'card'></td>
+          </tr>
+        </tbody>
       </table>
 
       <div className = 'button-div'>
