@@ -14,21 +14,21 @@ function App() {
           </tr>
           <tr>
             <td className = 'card face-down'></td>
-            <td className = 'card'></td>
-            <td className = 'card'></td>
-            <td className = 'card'></td>
+            <td className = 'card face-down' ></td>
+            <td className = 'card face-down'></td>
+            <td className = 'card face-up'></td>
           </tr>
           <tr>
-            <td className = 'card'></td>
-            <td className = 'card'></td>
-            <td className = 'card'></td>
-            <td className = 'card'></td>
+            <td className = 'card matched'></td>
+            <td className = 'card face-down'></td>
+            <td className = 'card face-down'></td>
+            <td className = 'card face-down'></td>
           </tr>
           <tr>
-            <td className = 'card'></td>
-            <td className = 'card'></td>
-            <td className = 'card'></td>
-            <td className = 'card'></td>
+            <td className = 'card face-down'></td>
+            <td className = 'card matched'></td>
+            <td className = 'card face-down'></td>
+            <td className = 'card face-down'></td>
           </tr>
         </tbody>
       </table>

@@ -60,6 +60,23 @@ body {
    background-position: center;
 }
 
+.face-up {
+   background-image: url(./img/key.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+
+
+}
+
+
+.matched {
+   background-image: url(./img/tiger.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
 /* Button */
 .button-div {
    width:100%;
