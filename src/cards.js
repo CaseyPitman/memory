@@ -7,7 +7,7 @@ let Card = () =>{
 
    return(
       <div className='card face-down'>
-         <img className = 'card-img' src = {require('./img/card-back.jpg')}></img>
+         <img className = 'card-img' src = {require('./img/card-back.jpg')} alt = 'alt-text'></img>
       </div>
    )
 }

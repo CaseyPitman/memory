@@ -1,25 +1,43 @@
-import React from 'react';
+import React, {Component} from 'react';
+
 import styles from './styles.css';
+
+// Data
+import deck from  './data'
 
 // Components
 import Title from './title';
 import Board from './board';
 import Button from './button';
 
-function App() {
+
+let startingBoard = deck;
+console.log(deck);
+
+class App extends Component {
+  constructor(props){
+    super()
+
+    this.state = {
+      gameInProgress: false
+        
+      
+    }
+  }
 
 
-  return (
-    <div className="App">
-      <Title />
+  render(){
+    return (
+      <div className="App">
+        <Title />
 
-      <Board/>
+        <Board/>
 
+        <Button />
 
-      <Button />
-
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
