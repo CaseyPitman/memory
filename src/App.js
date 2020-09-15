@@ -1,32 +1,22 @@
 import React from 'react';
-import styles from './styles.css'
+import styles from './styles.css';
+
+// Components
+import Title from './title';
+import Board from './board';
+import Button from './button';
 
 function App() {
 
 
-
   return (
     <div className="App">
-      <h1 className = 'title'> Memory </h1>
-      <div className = 'board' ratio = '1x1'>
-        <div className='card'></div>
-        <div className='card'></div>
-        <div className='card'></div>
-        <div className='card'></div>
-        <div className='card'></div>
-        <div className='card'></div>
-        <div className='card'></div>
-        <div className='card'></div>
-        <div className='card'></div>
-        <div className='card'></div>
-        <div className='card'></div>
-        <div className='card'></div>
-      </div>
+      <Title />
 
-      <div className = 'button-div'>
-        <button className = 'button'>Start Over</button>
-      </div>
+      <Board/>
 
+
+      <Button />
 
     </div>
   );
