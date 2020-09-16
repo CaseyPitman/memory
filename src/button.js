@@ -1,17 +1,25 @@
 // This module renders the start/reset button
 
 
-import React from 'react';
+import React, {Component} from 'react';
 
 
-let Button = () => {
+class Button extends Component {
+
+   //Click handler 
+   clickHandler = () => {
+      alert('clicked')
+   }
 
 
-   return (
-      <div className = 'button-div'>
-         <button className = 'button'>Start Over</button>
-      </div>
-   )
+   render(){
+
+      return (
+         <div className = 'button-div' >
+            <button className = 'button' onClick = {this.clickHandler}>{this.props.buttonType} </button>
+         </div>
+      )
+   }
 }
 
 export default Button;

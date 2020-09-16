@@ -11,29 +11,59 @@ import Board from './board';
 import Button from './button';
 
 
-let startingBoard = deck;
-console.log(deck);
+
+// const init = () => {
+// //Fisher-Yates algorithm to shuffle the cards and start the game
+//   for (let i = deck.length - 1; i > 0; i--){
+//     const j = Math.floor(Math.random() * i);
+//     const temp = deck[i];
+//     deck[i] = deck[j];
+//     deck[j] = temp;
+//   }
+// }
+
+
+
 
 class App extends Component {
   constructor(props){
     super()
 
+
+    // const init = () => {
+    //   //Fisher-Yates algorithm to shuffle the cards and start the game
+    //     for (let i = deck.length - 1; i > 0; i--){
+    //       const j = Math.floor(Math.random() * i);
+    //       const temp = deck[i];
+    //       deck[i] = deck[j];
+    //       deck[j] = temp;
+    //     }
+    //   }
+    //   init();
+
     this.state = {
-      gameInProgress: false
-        
+      gameInProgress: false,
+      board: deck,
+      buttonType: 'Start' //Or quit or Play again
       
     }
   }
 
-
+  
   render(){
+    // console.log(this.state.board);
     return (
       <div className="App">
         <Title />
 
-        <Board/>
+        <Board
+          gameInProgress = {this.state.gameInProgress}
+          board = {this.state.board}
+        />
 
-        <Button />
+        <Button 
+          buttonType = {this.state.buttonType}
+        />
 
       </div>
     );
