@@ -10,7 +10,7 @@ let Board = (props) => {
    let boardStyle = {};
    if (!props.gameInProgress){
       boardStyle = {
-         visibility: 'hidden'
+         display: 'none'
       }
    }
 

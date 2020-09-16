@@ -7,8 +7,8 @@ import React, {Component} from 'react';
 class Button extends Component {
 
    //Click handler 
-   clickHandler = () => {
-      alert('clicked')
+   clickHandler = (props) => {
+      this.props.clickButton(this.props.buttonType);
    }
 
 

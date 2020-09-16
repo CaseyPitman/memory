@@ -49,6 +49,17 @@ class App extends Component {
     }
   }
 
+  //Click the button
+
+  clickButton = (type) => {
+    console.log(`button has been clicked and its type is ${type}`);
+    //IF type is start or play again- randomize the board via fisher-yates
+    //turn on the display of the board
+
+    //else return to initial state/start
+
+  }
+
   
   render(){
     // console.log(this.state.board);
@@ -63,6 +74,7 @@ class App extends Component {
 
         <Button 
           buttonType = {this.state.buttonType}
+          clickButton = {this.clickButton}
         />
 
       </div>
