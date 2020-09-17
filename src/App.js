@@ -49,15 +49,34 @@ class App extends Component {
     }
   }
 
-  //Click the button
-
+  //Click the button to start, end, or replay the game.
   clickButton = (type) => {
-    console.log(`button has been clicked and its type is ${type}`);
-    //IF type is start or play again- randomize the board via fisher-yates
-    //turn on the display of the board
 
-    //else return to initial state/start
-
+    if (type !== 'Quit'){
+      //Player is starting the game or playing another game after finishing.
+      let sortedDeck = deck;
+      //Fisher-Yates algorithm to shuffle the cards and start the game
+      for (let i = sortedDeck.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * i);
+        const temp = sortedDeck[i];
+        sortedDeck[i] = sortedDeck[j];
+        sortedDeck[j] = temp;
+      }
+      
+      this.setState({
+        gameInProgress: true,
+        board: sortedDeck,
+        buttonType: 'Quit'
+      })
+   
+    }
+       //Player wants to quit playing
+       else {
+        this.setState({
+          gameInProgress: false,
+          buttonType: 'Start'
+        })
+      }
   }
 
   
