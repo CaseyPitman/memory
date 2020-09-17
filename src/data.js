@@ -4,62 +4,74 @@ let deck = [
    {
       id: 0,
       name: 'bridge',
-      img: 'bridge.jpg'
+      img: 'bridge.jpg',
+      status: 'down'  //or up or matched
    },
    {
       id: 1,
       name: 'bridge',
-      img: 'bridge.jpg'
+      img: 'bridge.jpg',
+      status: 'down'
    },
    {
       id: 2,
       name: 'castle',
-      img: 'castle.jpg'
+      img: 'castle.jpg',
+      status: 'down'
    },
    {
       id: 3,
       name: 'castle',
-      img: 'castle.jpg'
+      img: 'castle.jpg',
+      status: 'down'
    },
    {
       id: 4,
       name: 'key',
-      img: 'key.jpg'
+      img: 'key.jpg',
+      status: 'down'
    },
    {
       id: 5,
       name: 'key',
-      img: 'key.jpg'
+      img: 'key.jpg',
+      status: 'down'
    },
    {
       id: 6,
       name: 'moon',
-      img: 'moon.jpg'
+      img: 'moon.jpg',
+      status: 'down'
    },
    {
       id: 7,
       name: 'moon',
-      img: 'moon.jpg'
+      img: 'moon.jpg',
+      status: 'down'
    },
    {
       id: 8,
       name: 'wolf',
-      img: 'wolf.jpg'
+      img: 'wolf.jpg',
+      status: 'down'
    },
    {
       id: 9,
       name: 'wolf',
-      img: 'wolf.jpg'
+      img: 'wolf.jpg',
+      status: 'down'
    },
    {
       id: 10,
       name: 'tiger',
-      img: 'tiger.jpg'
+      img: 'tiger.jpg',
+      status: 'down'
    },
    {
       id: 11,
       name: 'tiger',
-      img: 'tiger.jpg'
+      img: 'tiger.jpg',
+      status: 'down'
    }
 ];
 

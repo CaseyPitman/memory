@@ -14,10 +14,28 @@ let Board = (props) => {
       }
    }
 
+   //Get cards
+   let renderCards = (card) => {
+
+      return (
+         <Card
+         key = {card.id} 
+         />
+      )
+   }
+
+
+   let cards = props.board.map(renderCards)
+
+   console.log('cards', cards);
+
    
    return (
       <div className = 'board' style = {boardStyle}>
-         <div className='card face-down'>
+         {cards}
+
+
+         {/* <div className='card face-down'>
             <img className = 'card-img' src = {require('./img/card-back.jpg')}></img>
          </div>
          <div className='card face-down'>
@@ -52,7 +70,7 @@ let Board = (props) => {
          </div>
          <div className='card face-down'>
             <img className = 'card-img' src = {require('./img/card-back.jpg')}></img>
-         </div>
+         </div> */}
       </div>
    )
 }
