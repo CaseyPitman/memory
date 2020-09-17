@@ -16,61 +16,27 @@ let Board = (props) => {
 
    //Get cards
    let renderCards = (card) => {
-
+      // console.log(props.board);
       return (
          <Card
-         key = {card.id} 
+            key = {card.id} 
+            board = {props.board}
          />
       )
    }
 
 
+   //Map board to generate cards
    let cards = props.board.map(renderCards)
 
-   console.log('cards', cards);
+   // console.log('cards', cards);
+
+   
 
    
    return (
       <div className = 'board' style = {boardStyle}>
-         {cards}
-
-
-         {/* <div className='card face-down'>
-            <img className = 'card-img' src = {require('./img/card-back.jpg')}></img>
-         </div>
-         <div className='card face-down'>
-            <img className = 'card-img' src = {require('./img/card-back.jpg')}></img>
-         </div>
-         <div className='card face-down'>
-            <img className = 'card-img' src = {require('./img/card-back.jpg')}></img>
-         </div>
-         <div className='card match'>
-            <img className = 'card-img' src = {require('./img/key.jpg')}></img>
-         </div>
-         <div className='card face-down'>
-            <img className = 'card-img' src = {require('./img/card-back.jpg')}></img>
-         </div>
-         <div className='card face-down'>
-            <img className = 'card-img' src = {require('./img/card-back.jpg')}></img>
-         </div>
-         <div className='card face-up'>
-            <img className = 'card-img' src = {require('./img/moon.jpg')}></img>
-         </div>
-         <div className='card match'>
-            <img className = 'card-img' src = {require('./img/key.jpg')}></img>
-         </div>
-         <div className='card  face-down'>
-            <img className = 'card-img' src = {require('./img/card-back.jpg')}></img>
-         </div>
-         <div className='card face-down'>
-            <img className = 'card-img' src = {require('./img/card-back.jpg')}></img>
-         </div>
-         <div className='card face-down'>
-            <img className = 'card-img' src = {require('./img/card-back.jpg')}></img>
-         </div>
-         <div className='card face-down'>
-            <img className = 'card-img' src = {require('./img/card-back.jpg')}></img>
-         </div> */}
+         {cards}       
       </div>
    )
 }
