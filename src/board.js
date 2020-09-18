@@ -20,6 +20,7 @@ let Board = (props) => {
       return (
          <Card
             key = {card.id} 
+            id = {card.id}
             board = {props.board}
          />
       )
