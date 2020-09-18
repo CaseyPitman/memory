@@ -29,18 +29,6 @@ class App extends Component {
   constructor(props){
     super()
 
-
-    // const init = () => {
-    //   //Fisher-Yates algorithm to shuffle the cards and start the game
-    //     for (let i = deck.length - 1; i > 0; i--){
-    //       const j = Math.floor(Math.random() * i);
-    //       const temp = deck[i];
-    //       deck[i] = deck[j];
-    //       deck[j] = temp;
-    //     }
-    //   }
-    //   init();
-
     this.state = {
       gameInProgress: false,
       board: deck,
@@ -79,6 +67,10 @@ class App extends Component {
       }
   }
 
+  clickCard = (id) => {
+    console.log(`Card number ${id} has been clicked.`)
+  }
+
   
   render(){
     // console.log(this.state.board);
@@ -89,6 +81,7 @@ class App extends Component {
         <Board
           gameInProgress = {this.state.gameInProgress}
           board = {this.state.board}
+          clickCard = {this.clickCard}
         />
 
         <Button 

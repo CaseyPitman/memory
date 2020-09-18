@@ -7,18 +7,19 @@ import React from 'react';
 
 let Card = (props) => {
 
-   //Click handler flips card
-   //If card is already flipped then it can't be clicked
-   //In Css make it so hover only works on face-down class.
+   //Card is clicked.
    let clickHandler = (event) => {
      
-      console.log(`card ${props.id} has been clicked`);
-      
+      let id = props.id;
+      props.clickCard(id);
 
    }
 
    //Determine how to display card
    //(Face up, face down, or matched)
+
+   //Default - card face down
+   
 
 
       return(
