@@ -69,48 +69,85 @@ class App extends Component {
       }
   }
 
+  //Check to see if two cards match
+  checkMatch = (cards) =>{
+    console.log(cards)
+    return cards[0] === cards[1] ? true : false;
+  }
+
+
   clickCard = (id) => {
-    console.log(`Card number ${id} has been clicked.`)
 
-
-    let matchId = (card) => {
-      console.log(card.id)
+    let turnedCards = this.state.currentUpturnCards;
+    let currentCard;
+    let turnCardUp = (card) => {
       if (card.id !== id){
         return card;
       } else {
-        console.log(card.status);
+        currentCard = card;
         return {
           ...card, 
           status: 'up'
         }
-        }
       }
-      
-      let flippedCard = this.state.board.map(matchId);
-      
-      console.log(flippedCard);
-      //Flip the card
-
-      this.setState({
-        board: flippedCard
-      })
     }
+      
+      let flippedCard = this.state.board.map(turnCardUp);
+      
+      turnedCards.push(currentCard.name);
+      
+      this.setState({
+        board: flippedCard,
+        currentUpturnCards: turnedCards
+      })
+
+      let matchName = (card) =>{
+        
+
+      }
+
+      //There are currently two cards facing up
+      if (this.state.currentUpturnCards.length === 2){
+        // console.log('there are two cards turned up')
+        //Compare the two cards
+        let check = this.checkMatch(turnedCards);
+        //No match
+        if (check){
+          console.log('match');
+        } else {
+          console.log('no match');
+        }
+        // let twoCards = this.state.board.map(matchName);
+        // console.log(twoCards);
+        
+
+        // setTimeout( 
+        //   this.setState({
+
+        //   }), 2000
+        // );
+
+      }
+
+        //compare them
+          //if they match we have a match. Change them to have an indication of match - yellow border?
+            //make them unclickable
+            //if no match 
+              //set time out
+              //change them both back to down  - match name function?
+
+      //else if length is 1 then just continue
+      else{
+        // console.log('only one card is turned')
+      }
 
 
-    //If one card, store it in currentUpturn
-
-    //If second card, check for match
-
-    //If match, reset card up turn counter and current upturn cards, outline it in yellow
-
-    //if all cards match, end game
-
-    //if not, continue
-
-    //if no match, set timeout, then flip cards back over
+      // 
+      
 
 
 
+    }
 
   
 
