@@ -73,11 +73,11 @@ body {
    transform: scale(1.05);
 }
 
-.face-down {
+.down {
 
 }
 
-.face-up {
+.up {
 
 
 
@@ -85,7 +85,7 @@ body {
 
 
 .match {
- border: 1px solid rgba(104, 109, 224,1.0);
+   border: 1px solid rgba(246, 229, 141,1.0);
 }
 
 /* Button */

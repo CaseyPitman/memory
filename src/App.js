@@ -33,7 +33,7 @@ class App extends Component {
       gameInProgress: false,
       board: deck,
       buttonType: 'Start', //Or quit or Play again
-      cardsUpTurn: 0,
+      cardsUpCounter: 0,
       currentUpturnCards: []
       
     }
@@ -72,14 +72,15 @@ class App extends Component {
   //Check to see if two cards match
   checkMatch = (cards) =>{
     console.log(cards)
-    return cards[0] === cards[1] ? true : false;
+    return cards[0] === cards[1]? true : false;
   }
 
 
   clickCard = (id) => {
-
+    console.log(`card ${id} has been clicked`)
     let turnedCards = this.state.currentUpturnCards;
     let currentCard;
+    
     let turnCardUp = (card) => {
       if (card.id !== id){
         return card;
@@ -101,52 +102,75 @@ class App extends Component {
         currentUpturnCards: turnedCards
       })
 
-      let matchName = (card) =>{
-        
-
+      //The two cards match
+      let posMatch = (card) =>{
+        if (!this.state.currentUpturnCards.includes(card.name)){
+          return card;
+        } else {
+          return{
+            ...card,
+            status: 'match',
+          }
+        }
+      }
+      //The two cards do not match
+      let negMatch = (card) =>{
+        if (!this.state.currentUpturnCards.includes(card.name)){
+          return card;
+        } else {
+          return{
+            ...card,
+            status: 'down',
+          }
+        }
       }
 
+      let updatedBoard =[];
       //There are currently two cards facing up
       if (this.state.currentUpturnCards.length === 2){
         // console.log('there are two cards turned up')
         //Compare the two cards
-        let check = this.checkMatch(turnedCards);
-        //No match
-        if (check){
-          console.log('match');
-        } else {
-          console.log('no match');
-        }
-        // let twoCards = this.state.board.map(matchName);
-        // console.log(twoCards);
+
         
+        let check = this.checkMatch(turnedCards);
 
-        // setTimeout( 
-        //   this.setState({
+        //Match. Set state to match.
+        if (check){
+          updatedBoard = this.state.board.map(posMatch);
 
-        //   }), 2000
-        // );
+          this.setState({
+            board: updatedBoard,
+            currentUpturnCards:[], 
+            cardsUpCounter: this.state.cardsUpCounter + 2
+          })
+
+          //if cards up counter === 12 the game is over. 
+
+        } 
+        //No match. Pause and flip cards back over. 
+        else {
+          console.log('no match');
+
+
+          updatedBoard = this.state.board.map(negMatch);
+        
+         
+          
+
+          this.setState({
+            board: updatedBoard,
+            currentUpturnCards:[]
+          })
+
+
+        }
 
       }
-
-        //compare them
-          //if they match we have a match. Change them to have an indication of match - yellow border?
-            //make them unclickable
-            //if no match 
-              //set time out
-              //change them both back to down  - match name function?
 
       //else if length is 1 then just continue
       else{
         // console.log('only one card is turned')
       }
-
-
-      // 
-      
-
-
-
     }
 
   
