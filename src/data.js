@@ -5,7 +5,7 @@ let deck = [
       id: 0,
       name: 'bridge',
       img: 'bridge.jpg',
-      status: 'down'  //or up or matched
+      status: 'down'  //or up or match
    },
    {
       id: 1,

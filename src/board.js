@@ -22,8 +22,8 @@ let Board = (props) => {
             key = {card.id} 
             id = {card.id}
             image = {card.img}
-            clickCard = {card.clickCard}
-            status = {card.clickCard}
+            clickCard = {props.clickCard}
+            status = {card.status}
             name = {card.name}
          />
       )

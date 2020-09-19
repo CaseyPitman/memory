@@ -32,7 +32,9 @@ class App extends Component {
     this.state = {
       gameInProgress: false,
       board: deck,
-      buttonType: 'Start' //Or quit or Play again
+      buttonType: 'Start', //Or quit or Play again
+      cardsUpTurn: 0,
+      currentUpturnCards: []
       
     }
   }
@@ -69,7 +71,48 @@ class App extends Component {
 
   clickCard = (id) => {
     console.log(`Card number ${id} has been clicked.`)
-  }
+
+
+    let matchId = (card) => {
+      console.log(card.id)
+      if (card.id !== id){
+        return card;
+      } else {
+        console.log(card.status);
+        return {
+          ...card, 
+          status: 'up'
+        }
+        }
+      }
+      
+      let flippedCard = this.state.board.map(matchId);
+      
+      console.log(flippedCard);
+      //Flip the card
+
+      this.setState({
+        board: flippedCard
+      })
+    }
+
+
+    //If one card, store it in currentUpturn
+
+    //If second card, check for match
+
+    //If match, reset card up turn counter and current upturn cards, outline it in yellow
+
+    //if all cards match, end game
+
+    //if not, continue
+
+    //if no match, set timeout, then flip cards back over
+
+
+
+
+  
 
   
   render(){
