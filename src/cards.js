@@ -9,7 +9,7 @@ let Card = (props) => {
 
    //Card is clicked.
    let clickHandler = (event) => {
-      if (props.status === 'match'){
+      if (props.status === 'match' || props.status === 'up'){
          return;
       }
       let id = props.id;

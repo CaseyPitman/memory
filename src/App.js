@@ -113,17 +113,7 @@ class App extends Component {
           }
         }
       }
-      //The two cards do not match
-      let negMatch = (card) =>{
-        if (!this.state.currentUpturnCards.includes(card.name)){
-          return card;
-        } else {
-          return{
-            ...card,
-            status: 'down',
-          }
-        }
-      }
+
 
       let updatedBoard =[];
       //There are currently two cards facing up
@@ -151,18 +141,26 @@ class App extends Component {
         else {
           console.log('no match');
 
+          //The two cards do not match
+          let negMatch = (card) =>{
+            if (!this.state.currentUpturnCards.includes(card.name)){
+              return card;
+            } else {
+              return{
+                ...card,
+                status: 'down',
+              }
+            }
+          }
 
-          updatedBoard = this.state.board.map(negMatch);
-        
-         
-          
-
-          this.setState({
+          //Show both unmatched cards for a moment before flipping back over. 
+          setTimeout(() => {
+            updatedBoard = this.state.board.map(negMatch);this.setState({
             board: updatedBoard,
             currentUpturnCards:[]
           })
-
-
+          }, 2000)
+        
         }
 
       }
