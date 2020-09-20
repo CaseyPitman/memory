@@ -11,20 +11,6 @@ import Board from './board';
 import Button from './button';
 
 
-
-// const init = () => {
-// //Fisher-Yates algorithm to shuffle the cards and start the game
-//   for (let i = deck.length - 1; i > 0; i--){
-//     const j = Math.floor(Math.random() * i);
-//     const temp = deck[i];
-//     deck[i] = deck[j];
-//     deck[j] = temp;
-//   }
-// }
-
-
-
-
 class App extends Component {
   constructor(props){
     super()
@@ -56,7 +42,8 @@ class App extends Component {
       this.setState({
         gameInProgress: true,
         board: sortedDeck,
-        buttonType: 'Quit'
+        buttonType: 'Quit',
+        cardsUpCounter: 0
       })
    
     }
@@ -133,8 +120,7 @@ class App extends Component {
             currentUpturnCards:[], 
             cardsUpCounter: this.state.cardsUpCounter + 2
           })
-
-          //if cards up counter === 12 the game is over. 
+      
 
         } 
         //No match. Pause and flip cards back over. 
@@ -159,19 +145,27 @@ class App extends Component {
             board: updatedBoard,
             currentUpturnCards:[]
           })
-          }, 2000)
+          }, 1500)
         
         }
 
       }
 
-      //else if length is 1 then just continue
-      else{
-        // console.log('only one card is turned')
-      }
     }
 
   
+
+
+    // FIGURE OUT HOW TO END GAME...
+  
+ 
+    // if (this.state.cardsUpCounter === 12){
+    //   console.log('game over')
+    //   this.setState({
+    //     buttonType: 'Play Again'
+    //   })
+
+    // }
 
   
   render(){
@@ -184,6 +178,7 @@ class App extends Component {
           gameInProgress = {this.state.gameInProgress}
           board = {this.state.board}
           clickCard = {this.clickCard}
+          currentUpturnCards = {this.state.currentUpturnCards}
         />
 
         <Button 

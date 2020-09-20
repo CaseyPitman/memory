@@ -25,6 +25,7 @@ let Board = (props) => {
             clickCard = {props.clickCard}
             status = {card.status}
             name = {card.name}
+            currentUpturnCards = {props.currentUpturnCards}
          />
       )
    }
