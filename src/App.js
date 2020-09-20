@@ -62,9 +62,20 @@ class App extends Component {
     return cards[0] === cards[1]? true : false;
   }
 
+  checkWin = () => {
+    if (this.state.cardsUpCounter === 12){
+      console.log('game over')
+      this.setState({
+        buttonType: 'Play Again'
+      })
 
-  clickCard = (id) => {
-    console.log(`card ${id} has been clicked`)
+    }
+
+  }
+
+
+  clickCard = async (id) => {
+
     let turnedCards = this.state.currentUpturnCards;
     let currentCard;
     
@@ -115,12 +126,13 @@ class App extends Component {
         if (check){
           updatedBoard = this.state.board.map(posMatch);
 
-          this.setState({
+          await this.setState({
             board: updatedBoard,
             currentUpturnCards:[], 
             cardsUpCounter: this.state.cardsUpCounter + 2
           })
       
+          this.checkWin();
 
         } 
         //No match. Pause and flip cards back over. 
@@ -152,20 +164,6 @@ class App extends Component {
       }
 
     }
-
-  
-
-
-    // FIGURE OUT HOW TO END GAME...
-  
- 
-    // if (this.state.cardsUpCounter === 12){
-    //   console.log('game over')
-    //   this.setState({
-    //     buttonType: 'Play Again'
-    //   })
-
-    // }
 
   
   render(){
