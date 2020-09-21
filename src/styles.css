@@ -33,13 +33,15 @@ body {
 /* Game Board */
 
 .board {
+
    background:transparent;
    display:flex;
    margin: auto;
    width:90%;
-
-   justify-content: center;
-   align-items: center;
+   max-width: 700px;
+   height: auto;
+   justify-content: space-around;
+   align-content:space-around;
    flex-flow: row wrap;
 }
 
@@ -55,9 +57,10 @@ body {
 
 .card {
    border:1px solid whitesmoke;   
-   height: 140px;
-   margin:25px;
-   width: 100px;
+   height: auto;
+   margin-top:25px;
+   /* width: 100px; */
+   width:22%;
 }
 
 .card-img {
