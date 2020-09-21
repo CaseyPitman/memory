@@ -12,8 +12,9 @@ html {
 }
 
 body {
-   background: -webkit-linear-gradient(to top, #3498db, #2c3e50);  /* Chrome 10-25, Safari 5.1-6 */
-   background: linear-gradient(to top, #3498db, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   background: #5C258D;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to top, #4389A2, #5C258D);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to top, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
@@ -71,6 +72,7 @@ body {
 .card:hover {
    cursor: pointer;
    transform: scale(1.05);
+   border: 3px solid rgba(246, 229, 141,1.0)
 }
 
 
@@ -97,5 +99,5 @@ body {
 
  .button:hover {
     cursor: pointer;
-    background: rgba(104, 109, 224,1.0);
+    background:rgb(92, 37, 141, 0.9);
  }

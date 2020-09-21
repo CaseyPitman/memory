@@ -3,14 +3,14 @@
 let deck = [
    {
       id: 0,
-      name: 'bridge',
-      img: 'bridge.jpg',
+      name: 'dragon',
+      img: 'dragon.jpg',
       status: 'down'  //or up or match
    },
    {
       id: 1,
-      name: 'bridge',
-      img: 'bridge.jpg',
+      name: 'dragon',
+      img: 'dragon.jpg',
       status: 'down'
    },
    {
@@ -51,26 +51,26 @@ let deck = [
    },
    {
       id: 8,
-      name: 'wolf',
-      img: 'wolf.jpg',
+      name: 'wizard',
+      img: 'wizard.jpg',
       status: 'down'
    },
    {
       id: 9,
-      name: 'wolf',
-      img: 'wolf.jpg',
+      name: 'wizard',
+      img: 'wizard.jpg',
       status: 'down'
    },
    {
       id: 10,
-      name: 'tiger',
-      img: 'tiger.jpg',
+      name: 'unicorn',
+      img: 'unicorn.jpg',
       status: 'down'
    },
    {
       id: 11,
-      name: 'tiger',
-      img: 'tiger.jpg',
+      name: 'unicorn',
+      img: 'unicorn.jpg',
       status: 'down'
    }
 ];
