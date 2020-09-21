@@ -1,14 +1,8 @@
-
-
-
+/* CSS styles for Memory game. */
 *{
    box-sizing: border-box;
    margin:0px;
    padding: 0px;
-}
-
-html {
-
 }
 
 body {
@@ -18,17 +12,19 @@ body {
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
+   min-height:100vh;
+   width:100%;
+
    display:flex;
    justify-content: center;
    align-items: center;
    flex-flow: row wrap;
-   width:100%;
-   min-height:100vh;
 }
 
 #root {
    width:100%;
 }
+
 .App {
    margin: auto;
    width:80%;
@@ -37,44 +33,44 @@ body {
 /* Game Board */
 
 .board {
+   background:transparent;
    display:flex;
+   margin: auto;
+   width:90%;
+
    justify-content: center;
    align-items: center;
    flex-flow: row wrap;
-   margin: auto;
-   background:transparent;
-   width:90%;
 }
 
 .title {
    color: whitesmoke;
    font-family: 'Kufam', cursive;
    font-size: 60px;
-   width: 100%;
    text-align: center;
+   width: 100%;
 }
 
+/* Cards */
+
 .card {
-   /* background-image: url('./img/card-back.jpg');
-   background-position: center; */
    border:1px solid whitesmoke;   
-   margin:25px;
    height: 140px;
+   margin:25px;
    width: 100px;
 }
 
 .card-img {
    display:block;
-   width:100%;
    height:100%;
+   width:100%;
 }
 
 .card:hover {
+   border: 3px solid rgba(246, 229, 141,1.0);
    cursor: pointer;
    transform: scale(1.05);
-   border: 3px solid rgba(246, 229, 141,1.0)
 }
-
 
 .match {
    border: 3px solid rgba(246, 229, 141,1.0);
@@ -98,6 +94,6 @@ body {
  }
 
  .button:hover {
-    cursor: pointer;
     background:rgb(92, 37, 141, 0.9);
+    cursor: pointer;
  }

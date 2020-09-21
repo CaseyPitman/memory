@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+//CSS styles
 import styles from './styles.css';
 
 // Data
@@ -62,24 +62,25 @@ class App extends Component {
     return cards[0] === cards[1]? true : false;
   }
 
+  //Check to see if the game has been completed. If so, offer to play again.
   checkWin = () => {
     if (this.state.cardsUpCounter === 12){
       console.log('game over')
       this.setState({
         buttonType: 'Play Again'
       })
-
     }
-
   }
 
-
+  //Player clicks a card.
   clickCard = async (id) => {
 
     let turnedCards = this.state.currentUpturnCards;
     let currentCard;
-    
+
+    //Flip the clicked card. 
     let turnCardUp = (card) => {
+      //Identify the card to be flipped. 
       if (card.id !== id){
         return card;
       } else {
@@ -100,7 +101,7 @@ class App extends Component {
         currentUpturnCards: turnedCards
       })
 
-      //The two cards match
+      //Do this if the two flipped cards match
       let posMatch = (card) =>{
         if (!this.state.currentUpturnCards.includes(card.name)){
           return card;
@@ -112,17 +113,15 @@ class App extends Component {
         }
       }
 
-
+    
       let updatedBoard =[];
-      //There are currently two cards facing up
+      // If there are currently two cards facing up
       if (this.state.currentUpturnCards.length === 2){
-        // console.log('there are two cards turned up')
-        //Compare the two cards
 
-        
+        //Compare the two cards for a match
         let check = this.checkMatch(turnedCards);
 
-        //Match. Set state to match.
+        //There is a match. Set state to match.
         if (check){
           updatedBoard = this.state.board.map(posMatch);
 
@@ -131,15 +130,13 @@ class App extends Component {
             currentUpturnCards:[], 
             cardsUpCounter: this.state.cardsUpCounter + 2
           })
-      
+          //Check for a win. 
           this.checkWin();
-
         } 
+
         //No match. Pause and flip cards back over. 
         else {
-          console.log('no match');
-
-          //The two cards do not match
+          //Flips the unmatched cards to face down.
           let negMatch = (card) =>{
             if (!this.state.currentUpturnCards.includes(card.name)){
               return card;
@@ -158,16 +155,12 @@ class App extends Component {
             currentUpturnCards:[]
           })
           }, 1500)
-        
         }
-
       }
-
     }
 
   
   render(){
-    // console.log(this.state.board);
     return (
       <div className="App">
         <Title />

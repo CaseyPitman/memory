@@ -5,8 +5,8 @@ import Card from './cards'
 
 let Board = (props) => {
 
-   //If game in progress = false
-   // board style is hidden;
+   //If game is not yet in progress, the board is not visible. 
+
    let boardStyle = {};
    if (!props.gameInProgress){
       boardStyle = {
@@ -16,7 +16,6 @@ let Board = (props) => {
 
    //Get cards
    let renderCards = (card) => {
-      // console.log(props.board);
       return (
          <Card
             key = {card.id} 
@@ -34,11 +33,6 @@ let Board = (props) => {
    //Map board to generate cards
    let cards = props.board.map(renderCards)
 
-   // console.log('cards', cards);
-
-   
-
-   
    return (
       <div className = 'board' style = {boardStyle}>
          {cards}       
